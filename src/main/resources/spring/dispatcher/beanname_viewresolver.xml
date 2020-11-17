@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<!-- View 이름을 객체로 연결 시켜주는 객체  --> <!-- 객체를 찾는것  얘가 0-->  <!-- ch01에 ViewResolver 순서가 1  -->
+	<bean  class="org.springframework.web.servlet.view.BeanNameViewResolver"> <!--  이객체를 생성할때id="viewResolver2" viewResolver2로 객체를 생성하라 id="" 옆을 경우 클래스 이름의 첫글자가 소문자인 이름으로 저장-->
+		<property name="order" value="0"/> <!--value="0" 순서   뷰이름을 얘가 먼저 해석  /컨트롤러가 관리하는 객체중에  컨트롤러가 해석한 뷰이름이 없을 경우  위에 있는 애가 1번이므로 1번한테 넘김 -->
+	</bean>
+
+</beans>
